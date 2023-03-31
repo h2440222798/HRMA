@@ -71,10 +71,10 @@ def get_r50_b16_config():
 
     return config
 
-class CANFAN(nn.Module):
+class HCTN(nn.Module):
     def __init__(self, out_channels=1, num_slices=5, se_loss=True,**kwargs):
 
-        super(CANFAN, self).__init__()
+        super(HCTN, self).__init__()
 
         # 三个双门控空间注意力
         self.attentionblock1 = grid.MultiAttentionBlock(
@@ -229,24 +229,4 @@ class CANFAN(nn.Module):
         # 返回最终结果
         return out_label
 def get_network():
-    return CANFAN
-if __name__ == '__main__':
-
-    model = CANFAN(out_channels=1)
-    print(model)
-
-    # x_np = np.ones((2,1,192,192),dtype=np.float32)
-    # x_tensor = torch.tensor(x_np)(64, 192,160)
-    x_tensor = torch.randn((6, 1, 256, 256))
-    y = model(x_tensor)
-    print(y)
-    print(y.shape)
-    # import torch
-    from thop import profile
-
-    #
-    # inputs = torch.randn(2, 1, 192, 192)
-    # # model = DenseUNet(1, 3)
-    #
-    flops, params = profile(model, inputs=(x_tensor,))
-    print('flops: {}, params: {}'.format(flops, params))
+    return HCTN

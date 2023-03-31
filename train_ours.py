@@ -202,29 +202,29 @@ def main():
     os.makedirs('models/%s' % config['name'], exist_ok=True)
 
     # 如果是单个文件将版本号的内容复制过来
-    path = os.path.join('./network_version_controll/', config['arch'])
-    is_file = True
-    for filename in os.listdir(path):
-        if os.path.isdir(os.path.join(path, filename)):
-            if filename[0] == '.':
-                continue
-            is_file = False
-            path = os.path.join(path, filename)
-            break
-    if is_file is True:
-        origin_path = os.path.join('./network_version_controll/', config['arch'], arch + '.py')
-        target_path = os.path.join('./Modules/General_Network.py')
-        shutil.copyfile(origin_path, target_path)
-    else:
-        for filename in os.listdir(path):
-            if filename[0] == '.':
-                continue
-            origin_path = os.path.join(path, filename)
-            if filename.split('.')[0] == arch:
-                target_path = os.path.join('./Modules/General_Network.py')
-            else:
-                target_path = os.path.join('./Modules/', filename)
-            shutil.copyfile(origin_path, target_path)
+    # path = os.path.join('./network_version_controll/', config['arch'])
+    # is_file = True
+    # for filename in os.listdir(path):
+    #     if os.path.isdir(os.path.join(path, filename)):
+    #         if filename[0] == '.':
+    #             continue
+    #         is_file = False
+    #         path = os.path.join(path, filename)
+    #         break
+    # if is_file is True:
+    #     origin_path = os.path.join('./network_version_controll/', config['arch'], arch + '.py')
+    #     target_path = os.path.join('./Modules/General_Network.py')
+    #     shutil.copyfile(origin_path, target_path)
+    # else:
+    #     for filename in os.listdir(path):
+    #         if filename[0] == '.':
+    #             continue
+    #         origin_path = os.path.join(path, filename)
+    #         if filename.split('.')[0] == arch:
+    #             target_path = os.path.join('./Modules/General_Network.py')
+    #         else:
+    #             target_path = os.path.join('./Modules/', filename)
+    #         shutil.copyfile(origin_path, target_path)
 
     # end of copy
     print('-' * 20)
