@@ -9,6 +9,7 @@ test : val_ours.py
 
 figure will avaliable later
 
+module will be published after our paper is accepted！
 
 
 name: HCTN
