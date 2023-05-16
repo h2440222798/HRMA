@@ -1,5 +1,5 @@
-# HCTN
-A hybrid CNN-Transformer Network for medical image analysis
+# HRMA-Net
+HRMA-Net: High-Resolution Multi-Scale Attention Network with Full-attention Structure for Abdominal Tumor Segmentation
 
 input dataset: 256x256 2d image
 
@@ -12,7 +12,7 @@ figure will avaliable later
 module will be published after our paper is accepted！
 
 
-name: HCTN
+name: HRMA-Net
 channels:
   - defaults
 dependencies:
